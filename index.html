@@ -721,15 +721,14 @@
   <script type="text/javascript" src="assets/js/app.js"></script>
   <script>
     $(document).ready(function() {
+        // DataTable
+    var table = $('#datatable1').DataTable();
     // Setup - add a text input to each footer cell
     $('#datatable1 thead th').each( function () {
         var title = $(this).text();
         $(this).html( title+'</br><input type="search" class="form-control input-sm" style="font-size: 10px; width: 100px;" placeholder="filter..." />' );
     } );
  
-    // DataTable
-    var table = $('#datatable1').DataTable();
-    
     $('a.select-all').on( 'click', function (e) {
         $(":checkbox").attr('checked', true);
         $(this).hide();
@@ -771,6 +770,9 @@
         e.stopPropagation();
         });        
     } );
+
+    
+    
 } );
   </script>
 </body>

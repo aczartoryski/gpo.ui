@@ -10465,9 +10465,28 @@ var datatable = $('.datatable').DataTable({
   "dom": '<"top"fl<"clear">>rt<"bottom"ip<"clear">>',
   "oLanguage": {
     "sSearch": "",
-    "sLengthMenu": "_MENU_"
+    "sLengthMenu": "_MENU_",
+	"sProcessing":     "Przetwarzanie...",
+    "sSearch":         "",
+    "sLengthMenu":     "_MENU_",
+    "sInfo":           "Pozycje od _START_ do _END_ z _TOTAL_ łącznie",
+    "sInfoEmpty":      "Pozycji 0 z 0 dostępnych",
+    "sInfoFiltered":   "(filtrowanie spośród _MAX_ dostępnych pozycji)",
+    "sInfoPostFix":    "",
+    "sLoadingRecords": "Wczytywanie...",
+    "sZeroRecords":    "Nie znaleziono pasujących pozycji",
+    "sEmptyTable":     "Brak danych",
+    "oPaginate": {
+        "sFirst":      "Pierwsza",
+        "sPrevious":   "Poprzednia",
+        "sNext":       "Następna",
+        "sLast":       "Ostatnia"
+    },
+	"oAria": {
+		"sSortAscending": ": aktywuj, by posortować kolumnę rosnąco",
+		"sSortDescending": ": aktywuj, by posortować kolumnę malejąco"
+	}
   },
-  
   
   "initComplete": function initComplete(settings, json) {
     $('div.dataTables_filter input').attr('placeholder', 'Szukaj...');
