@@ -93,7 +93,6 @@
     
   </div>
 </aside>
-
 <script type="text/ng-template" id="sidebar-dropdown.tpl.html">
   <div class="dropdown-background">
     <div class="bg"></div>
@@ -705,8 +704,7 @@
                 </span>
               </a>
             </td>
-        </tr>
-        
+        </tr> 
     </tbody>
 </table>
         </div>
@@ -719,59 +717,6 @@
   
   <script type="text/javascript" src="assets/js/vendor.js"></script>
   <script type="text/javascript" src="assets/js/app.js"></script>
-  <script>
-    $(document).ready(function() {
-    // Setup - add a text input to each footer cell
-    $('#datatable1 thead th').each( function () {
-        var title = $(this).text();
-        $(this).html( title+'</br><input type="search" class="form-control input-sm" style="font-size: 10px; width: 100px;" placeholder="filter..." />' );
-    } );
- 
-    // DataTable
-    var table = $('#datatable1').DataTable();
-    
-    $('a.select-all').on( 'click', function (e) {
-        $(":checkbox").attr('checked', true);
-        $(this).hide();
-        $('a.deselect-all').show();
-    });
-
-    $('a.deselect-all').on( 'click', function (e) {
-        $(":checkbox").attr('checked', false);
-        $(this).hide();
-        $('a.select-all').show();
-    });
-
-    $('a.toggle-vis').on( 'click', function (e) {
-        e.preventDefault();
- 
-        // Get the column API object
-        var column = table.column( $(this).attr('data-column') );
-        if ($(this).children('span').hasClass('badge-success')) {
-            $(this).children('span').removeClass('badge-success').addClass('badge-danger');
-            $(this).children('span').children('i').removeClass('fa-plus-square').addClass('fa-minus-square');
-        } else {
-            $(this).children('span').removeClass('badge-danger').addClass('badge-success');
-            $(this).children('span').children('i').removeClass('fa-minus-square').addClass('fa-plus-square');
-        }
-        
-        // Toggle the visibility
-        column.visible( ! column.visible() );
-        } );
-
-    // Apply the search
-    table.columns().eq( 0 ).each( function ( colIdx ) {
-        $( 'input', table.column( colIdx ).header() ).on( 'keyup change', function () {
-            table
-                .column( colIdx )
-                .search( this.value )
-                .draw();
-        } );
-        $('input', table.column(colIdx).header()).on('click', function(e) {
-        e.stopPropagation();
-        });        
-    } );
-} );
-  </script>
+  <script type="text/javascript" src="assets/js/config.js"></script>
 </body>
 </html>
