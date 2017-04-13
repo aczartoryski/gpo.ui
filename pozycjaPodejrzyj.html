@@ -1,0 +1,179 @@
+<?-- 
+    Created on : April 2017
+    Author     : Artur Czartoryski
+    By downloading/using this software you agree to the following user license terms:
+
+    Allow:
+    - Personal and Commercial Use.
+    - Modification.
+    The MIT License (MIT)
+
+    Copyright (c) [2017] [Artur Czartoryski]
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
+    to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+    and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
+    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+    OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+    This software is basing on Flat Admin Bootstrap Templates copied from https://github.com/tui2tone/flat-admin-bootstrap-templates.
+    Other lib that use in this software is on their own License.
+--?>
+<!DOCTYPE html>
+<html lang="pl">
+<html>
+<head>
+  <title>GKZP</title>
+  <meta name="description" content="Generator Kart Zleceń Produkcji">
+  <meta name="author" content="Artur Czartoryski"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"  />
+  <link rel="stylesheet" type="text/css" href="assets/css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/flat-admin.css">
+
+  <!-- Theme -->
+  <link rel="stylesheet" type="text/css" href="assets/css/theme/blue-sky.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/theme/blue.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/theme/red.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/theme/yellow.css">
+
+</head>
+<body>
+<div class="app app-default">
+
+<aside class="app-sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a class="sidebar-brand" href="#"><span class="highlight">v1</span> GKZP</a>
+    <button type="button" class="sidebar-toggle">
+      <i class="fa fa-times"></i>
+    </button>
+  </div>
+  <div class="sidebar-menu">
+    <ul class="sidebar-nav">
+      <li class="">
+        <a href="index.html">
+          <div class="icon">
+            <i class="fa fa-tasks" aria-hidden="true"></i>
+          </div>
+          <div class="title">lista zleceń</div>
+        </a>
+      </li>
+      <li>
+        <a href="gniazda.html">
+          <div class="icon">
+            <i class="fa fa-cubes" aria-hidden="true"></i>
+          </div>
+          <div class="title">Lista gniazd</div>
+        </a>
+      </li>
+      <li>
+        <a href="pola.html">
+          <div class="icon">
+            <i class="fa fa-print" aria-hidden="true"></i>
+          </div>
+          <div class="title">Mapowanie pól</div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <div class="icon">
+            <i class="fa fa-power-off" aria-hidden="true"></i>
+          </div>
+          <div class="title">Wyloguj się</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="sidebar-footer">
+    
+  </div>
+</aside>
+<script type="text/ng-template" id="sidebar-dropdown.tpl.html">
+  <div class="dropdown-background">
+    <div class="bg"></div>
+  </div>
+  <div class="dropdown-container">
+    {{list}}
+  </div>
+</script>
+<div class="app-container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">Podgląd pozycji zlecenia produkcji</div>
+        <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Numer</label>
+                  <div class="col-md-9">
+                    <div class="input-group">
+                      <span class="input-group-addon">#</span>
+                      <input type="text" class="form-control" aria-label="Numer zamówienia" disabled value="45953#1#3">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Status</label>
+                  <div class="col-md-9">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-gears" aria-hidden="true"></i></span>
+                      <select class="select2" disabled>
+                        <option value="1">Nowe</option>
+                        <option value="2">W toku</option>
+                        <option value="3">Anulowane</option>
+                        <option value="4">Przywrócone</option>
+                        <option value="5">Zakończone</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Termin</label>
+                    <div class="col-md-9">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" disabled aria-label="Termin zamówienia" value="10/04/2017">
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Wyrób</label>
+                    <div class="col-md-9">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-server" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" disabled aria-label="Wyrób" value="Brama garażowa Profil 52">
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+           </div>
+           <div class="row"> 
+            <div class="form-footer">
+              <div class="form-group">
+                <div class="col-md-9 col-md-offset-1">
+                  <button type="button" class="btn btn-primary">Edytuj</button>
+                  <button type="button" class="btn btn-default">Wróć do listy</button>
+                  <button type="button" class="btn btn-danger">Usuń</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script type="text/javascript" src="assets/js/vendor.js"></script>
+  <script type="text/javascript" src="assets/js/app.js"></script>
+  <script type="text/javascript" src="assets/js/config.js"></script>
+</body>
+</html>
