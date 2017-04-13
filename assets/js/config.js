@@ -1,15 +1,13 @@
 $(document).ready(function() {
+    
+    
     // Hide deselect all checkbox button
     $('a.deselect-all').hide();
 
     // DataTable
     var table = $('#datatable1').DataTable();
     
-    // Setup - add a text input to each footer cell
-    $('#datatable1 thead th').each( function () {
-        var title = $(this).text();
-        $(this).html( title+'</br><input type="search" class="form-control input-sm" style="font-size: 10px; width: 100px;" placeholder="filter..." />' );
-    } );
+    
     
     // Check all checkboxes in the table after click on select-all
     $('a.select-all').on( 'click', function (e) {
@@ -24,6 +22,10 @@ $(document).ready(function() {
         $(this).hide();
         $('a.select-all').show();
     });
+
+    $('#datetimepicker1.input').on('click', function (e) {
+                $('#datetimepicker1').data("DateTimePicker").FUNCTION();
+            });
 
     // Hide or show selected column in the table
     $('a.toggle-vis').on( 'click', function (e) {

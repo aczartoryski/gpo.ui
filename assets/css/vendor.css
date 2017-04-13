@@ -8958,8 +8958,8 @@ button.close {
 
 table.dataTable {
   clear: both;
-  margin-top: 6px !important;
-  margin-bottom: 6px !important;
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
   max-width: none !important;
   border-collapse: separate !important;
   overflow-x: scroll;

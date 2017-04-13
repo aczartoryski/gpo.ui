@@ -10463,6 +10463,11 @@ $(".select2").select2();
 
 var datatable = $('.datatable').DataTable({
   "dom": '<"top"fl<"clear">>rt<"bottom"ip<"clear">>',
+  "scrollX": true,
+  "columnDefs": [
+    { "orderable": false, "targets": 0 }
+  ],
+  "order": [[ 1, 'asc' ]],
   "oLanguage": {
     "sSearch": "",
     "sLengthMenu": "_MENU_",
@@ -10487,6 +10492,7 @@ var datatable = $('.datatable').DataTable({
 		"sSortDescending": ": aktywuj, by posortować kolumnę malejąco"
 	}
   },
+  
   
   "initComplete": function initComplete(settings, json) {
     $('div.dataTables_filter input').attr('placeholder', 'Szukaj...');
