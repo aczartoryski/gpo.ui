@@ -42,25 +42,7 @@
   <link rel="stylesheet" type="text/css" href="assets/css/theme/red.css">
   <link rel="stylesheet" type="text/css" href="assets/css/theme/yellow.css">
   <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.css">
-  
-  <style>
-  #sortable1, #sortable2 {
-    border: 0px;
-    width: 100%;
-    min-height: 20px;
-    list-style-type: none;
-    margin: 2px;
-    padding: 5px;
-    float: left;
-    margin-right: 10px;
-  }
-  #sortable1 li, #sortable2 li {
-    margin: 0 5px 5px 5px;
-    padding: 5px;
-    font-size: 1.2em;
-    width: 95%;
-  }
-  </style>
+  <link rel="stylesheet" type="text/css" href="assets/css/sortable.css">
   
 </head>
 <body>
@@ -153,11 +135,12 @@
                         </ul>
                       </td>
                       <td width="50%">
-                        <ul id="sortable2" class="connectedSortable">
+                        <ul id="notsortable" >
                           <li class="ui-state-highlight ui-state-disabled">Nr zamówienia (0)</li>
                           <li class="ui-state-highlight ui-state-disabled">Termin (1)</li>
                           <li class="ui-state-highlight ui-state-disabled">Wyrób (2)</li>
-
+                        </ul>
+                        <ul id="sortable2" class="connectedSortable">
                         </ul>
                       </td>
                   </tr>
@@ -183,14 +166,8 @@
 <script type="text/javascript" src="assets/js/vendor.js"></script>
 <script type="text/javascript" src="assets/js/app.js"></script>
 <script type="text/javascript" src="assets/js/jquery-ui.js"></script>
+<script type="text/javascript" src="assets/js/sortable.config.js"></script>
 
-  <script>
-  $( function() {
-    $( "#sortable1, #sortable2" ).sortable({
-      connectWith: ".connectedSortable"
-    }).disableSelection();
-  } );
-  </script>  
 
 </body>
 </html>
