@@ -41,7 +41,27 @@
   <link rel="stylesheet" type="text/css" href="assets/css/theme/blue.css">
   <link rel="stylesheet" type="text/css" href="assets/css/theme/red.css">
   <link rel="stylesheet" type="text/css" href="assets/css/theme/yellow.css">
-
+  <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.css">
+  
+  <style>
+  #sortable1, #sortable2 {
+    border: 0px;
+    width: 100%;
+    min-height: 20px;
+    list-style-type: none;
+    margin: 2px;
+    padding: 5px;
+    float: left;
+    margin-right: 10px;
+  }
+  #sortable1 li, #sortable2 li {
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    width: 95%;
+  }
+  </style>
+  
 </head>
 <body>
   <div class="app app-default">
@@ -108,115 +128,69 @@
     <div class="col-xs-12">
       <div class="card">
         <div class="card-header">
-          <div class="card-title">Lista mapowania pól
-            <div>
-              <a href="polaNowe.html">
-                <span class="badge badge-info badge-icon">
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                    <span>Nowe mapowanie</span>
-                </span>
-              </a>
-            </div>
-          </div>
+          <div class="card-title">Nowe mapowanie pól karty produkcyjnej dla gniazda <i>0</i></div>
         </div>
         <div class="card-body no-paddings table-responsive">
-          <table class="datatable table table-striped table-bordered table-hover table-condensed primary" cellspacing="0" width="100%" id="datatable1">
-    <thead>
-        <tr>
-            <th>Akcje</th>
-            <th>Mapowanie dla gniazda</th>
-            <th>Nazwa pola (ID)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="width: 20%">
-              <a href="polaEdytuj.html">
-                <span class="badge badge-info badge-icon">
-                    <i class="fa fa-edit" aria-hidden="true"></i>
-                    <span>Edytuj</span>
-                </span>
-              </a>
-              <a>
-                <span class="badge badge-danger badge-icon">
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                    <span>Usuń</span>
-                </span>
-              </a>
-            </td>
-            <td>0</td>
-            <td>
-              <ol>
-                <li>Nr zamówienia (0)</li>
-                <li>Kolor skrzynki (1)</li>
-                <li>Wiercenie otworów w prowadnicy do montażu (15)</li>
-                <li>.... itd.</li>
-              </ol>
-            </td>
-        </tr>
-        <tr>
-            <td style="width: 20%">
-              <a href="polaEdytuj.html">
-                <span class="badge badge-info badge-icon">
-                    <i class="fa fa-edit" aria-hidden="true"></i>
-                    <span>Edytuj</span>
-                </span>
-              </a>
-              <a>
-                <span class="badge badge-danger badge-icon">
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                    <span>Usuń</span>
-                </span>
-              </a>
-            </td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Nr zamówienia (0)</li>
-                <li>Kolor skrzynki (1)</li>
-                <li>Wiercenie otworów w prowadnicy do montażu (15)</li>
-                <li>.... itd.</li>
-              </ol>
-            </td>
-        </tr>
-        <tr>
-            <td style="width: 20%">
-              <a href="polaEdytuj.html">
-                <span class="badge badge-info badge-icon">
-                    <i class="fa fa-edit" aria-hidden="true"></i>
-                    <span>Edytuj</span>
-                </span>
-              </a>
-              <a>
-                <span class="badge badge-danger badge-icon">
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                    <span>Usuń</span>
-                </span>
-              </a>
-            </td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>Nr zamówienia (0)</li>
-                <li>Kolor skrzynki (1)</li>
-                <li>Wiercenie otworów w prowadnicy do montażu (15)</li>
-                <li>.... itd.</li>
-              </ol>
-            </td>
-        </tr>
-        
-    </tbody>
-</table>
+          <table class="table table-bordered table-condensed" cellspacing="0" width="100%">
+            <thead> 
+                <tr>
+                    <th>Dostępne pola</th>
+                    <th>Układ na karcie zlecenia</th>
+                </tr>
+            </thead>
+              <tbody>
+                  <tr>
+                      <td width="50%">
+                        <ul id="sortable1" class="connectedSortable">
+                          <li class="ui-state-default">Wiercenie otworów w prowadnicy do montażu (15)</li>
+                          <li class="ui-state-default">Kolor skrzynki (1)</li>
+                          <li class="ui-state-default">Pole 100 (xxx)</li>
+                          <li class="ui-state-default">Pole 101 (xxx)</li>
+                          <li class="ui-state-default">Pole 102 (xxx)</li>
+                          <li class="ui-state-default">Pole 103 (xxx)</li>
+                          <li class="ui-state-default">Pole 104 (xxx)</li>
+                          <li class="ui-state-default">Pole 105 (xxx)</li>
+                        </ul>
+                      </td>
+                      <td width="50%">
+                        <ul id="sortable2" class="connectedSortable">
+                          <li class="ui-state-highlight ui-state-disabled">Nr zamówienia (0)</li>
+                          <li class="ui-state-highlight ui-state-disabled">Termin (1)</li>
+                          <li class="ui-state-highlight ui-state-disabled">Wyrób (2)</li>
+
+                        </ul>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
         </div>
       </div>
     </div>
   </div>
+  <div class="row"> 
+            <div class="form-footer">
+              <div class="form-group">
+                <div class="col-md-9 col-md-offset-1">
+                  <button type="submit" class="btn btn-primary">Zapisz</button>
+                  <button type="button" class="btn btn-default">Anuluj</button>
+                </div>
+              </div>
+            </div>
+          </div>
 </div>
 
   </div>
-  
-  <script type="text/javascript" src="assets/js/vendor.js"></script>
-  <script type="text/javascript" src="assets/js/app.js"></script>
-  <script type="text/javascript" src="assets/js/global.config.js"></script>
+<script type="text/javascript" src="assets/js/vendor.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/jquery-ui.js"></script>
+
+  <script>
+  $( function() {
+    $( "#sortable1, #sortable2" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+  } );
+  </script>  
+
 </body>
 </html>

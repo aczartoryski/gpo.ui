@@ -44,7 +44,7 @@
 
 </head>
 <body>
-  <div class="app app-default">
+<div class="app app-default">
 
 <aside class="app-sidebar" id="sidebar">
   <div class="sidebar-header">
@@ -93,7 +93,6 @@
     
   </div>
 </aside>
-
 <script type="text/ng-template" id="sidebar-dropdown.tpl.html">
   <div class="dropdown-background">
     <div class="bg"></div>
@@ -103,118 +102,51 @@
   </div>
 </script>
 <div class="app-container">
-
-  <div class="row"> 
-    <div class="col-xs-12">
+  <div class="row">
+    <div class="col-md-12">
       <div class="card">
-        <div class="card-header">
-          <div class="card-title">Lista mapowania pól
-            <div>
-              <a href="polaNowe.html">
-                <span class="badge badge-info badge-icon">
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                    <span>Nowe mapowanie</span>
-                </span>
-              </a>
+        <div class="card-header">Nowe gniazdo produkcyjne</div>
+        <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Numer</label>
+                  <div class="col-md-6">
+                    <div class="input-group">
+                      <span class="input-group-addon">#</span>
+                      <input type="text" class="form-control" aria-label="Numer gniazda" placeholder="wpisz numer">
+                    </div>
+                  </div>
+                </div>
+              </div>  
+              <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Opis</label>
+                    <div class="col-md-9">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-file-text-o" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" aria-label="Opis gniazda" placeholder="wpisz opis gniazda">
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+           </div>
+           <div class="row"> 
+            <div class="form-footer">
+              <div class="form-group">
+                <div class="col-md-9 col-md-offset-1">
+                  <button type="submit" class="btn btn-primary">Zapisz</button>
+                  <button type="button" class="btn btn-default">Anuluj</button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="card-body no-paddings table-responsive">
-          <table class="datatable table table-striped table-bordered table-hover table-condensed primary" cellspacing="0" width="100%" id="datatable1">
-    <thead>
-        <tr>
-            <th>Akcje</th>
-            <th>Mapowanie dla gniazda</th>
-            <th>Nazwa pola (ID)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="width: 20%">
-              <a href="polaEdytuj.html">
-                <span class="badge badge-info badge-icon">
-                    <i class="fa fa-edit" aria-hidden="true"></i>
-                    <span>Edytuj</span>
-                </span>
-              </a>
-              <a>
-                <span class="badge badge-danger badge-icon">
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                    <span>Usuń</span>
-                </span>
-              </a>
-            </td>
-            <td>0</td>
-            <td>
-              <ol>
-                <li>Nr zamówienia (0)</li>
-                <li>Kolor skrzynki (1)</li>
-                <li>Wiercenie otworów w prowadnicy do montażu (15)</li>
-                <li>.... itd.</li>
-              </ol>
-            </td>
-        </tr>
-        <tr>
-            <td style="width: 20%">
-              <a href="polaEdytuj.html">
-                <span class="badge badge-info badge-icon">
-                    <i class="fa fa-edit" aria-hidden="true"></i>
-                    <span>Edytuj</span>
-                </span>
-              </a>
-              <a>
-                <span class="badge badge-danger badge-icon">
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                    <span>Usuń</span>
-                </span>
-              </a>
-            </td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Nr zamówienia (0)</li>
-                <li>Kolor skrzynki (1)</li>
-                <li>Wiercenie otworów w prowadnicy do montażu (15)</li>
-                <li>.... itd.</li>
-              </ol>
-            </td>
-        </tr>
-        <tr>
-            <td style="width: 20%">
-              <a href="polaEdytuj.html">
-                <span class="badge badge-info badge-icon">
-                    <i class="fa fa-edit" aria-hidden="true"></i>
-                    <span>Edytuj</span>
-                </span>
-              </a>
-              <a>
-                <span class="badge badge-danger badge-icon">
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                    <span>Usuń</span>
-                </span>
-              </a>
-            </td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>Nr zamówienia (0)</li>
-                <li>Kolor skrzynki (1)</li>
-                <li>Wiercenie otworów w prowadnicy do montażu (15)</li>
-                <li>.... itd.</li>
-              </ol>
-            </td>
-        </tr>
-        
-    </tbody>
-</table>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-  </div>
-  
   <script type="text/javascript" src="assets/js/vendor.js"></script>
   <script type="text/javascript" src="assets/js/app.js"></script>
   <script type="text/javascript" src="assets/js/global.config.js"></script>
